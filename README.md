@@ -245,11 +245,11 @@ This is a seperate service running on localhost:2701.
 2. Create a .bat file with the contents:
 ```
 @echo off
-git clone https://github.com/alvinjo/AccountFront.git
-git clone https://github.com/alvinjo/RealAccountApi.git
-git clone https://github.com/alvinjo/RealAccountNumGenApi.git
-git clone https://github.com/alvinjo/RealAccountPrizeApi.git
-git clone https://github.com/alvinjo/RealAccountConsumer.git
+git clone https://github.com/gavinharris43/AccountFront.git
+git clone https://github.com/gavinharris43/RealAccountApi.git
+git clone https://github.com/gavinharris43/RealAccountNumGenApi.git
+git clone https://github.com/gavinharris43/RealAccountPrizeApi.git
+git clone https://github.com/gavinharris43/RealAccountConsumer.git
 cd AccountFront
 npm install
 cd ..
