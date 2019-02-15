@@ -35,8 +35,8 @@ public class EndpointTests {
 	RestTemplate restTemp;
 	
 	private static final String MOCK_ACCOUNT_NUMBER = "A:453893";
-	private static final Account MOCK_ACCOUNT_1 = new Account(1L, "Ben", "Taylor", "C:634893");
-	private static final Account MOCK_ACCOUNT_2 = new Account(2L, "Alvin", "Joseph", "B:749452");
+	private static final Account MOCK_ACCOUNT_1 = new Account(1L, "Gavin", "Harris", "C:634893","gavin.harris@accademytrainee.com","password");
+	private static final Account MOCK_ACCOUNT_2 = new Account(2L, "Alvin", "Joseph", "B:749452","alvin.joseph@accademytrainee.com","password");
 	private static final Prize MOCK_PRIZE = new Prize();
 	private static final SentPrize MOCK_SENT_PRIZE = new SentPrize();
 	private static final ResponseEntity<Object> MOCK_RESPONSE_ENTITY = new ResponseEntity<Object>(HttpStatus.ACCEPTED);

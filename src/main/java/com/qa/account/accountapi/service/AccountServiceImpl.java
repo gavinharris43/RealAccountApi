@@ -3,6 +3,7 @@ package com.qa.account.accountapi.service;
 import com.qa.account.accountapi.persistence.repository.AccountRepository;
 import com.qa.account.accountapi.util.exceptions.AccountNotFoundException;
 import com.qa.account.accountapi.persistence.domain.Account;
+import com.qa.account.accountapi.persistence.domain.Cohort;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class AccountServiceImpl implements AccountService {
@@ -20,6 +22,12 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public List<Account> getAccounts() {
         return repo.findAll();
+    }
+    
+    @Override
+    public List<Cohort> getAccountsCohorts() {
+       List<Cohort> cohorts=repo.findAll().stream().map(Account::getCohort).collect(Collectors.toList());
+    	return cohorts;
     }
 
     @Override
@@ -57,5 +65,7 @@ public class AccountServiceImpl implements AccountService {
         Optional<Account> accountOptional = repo.findById(id);
         return accountOptional.isPresent();
     }
+
+
 
 }

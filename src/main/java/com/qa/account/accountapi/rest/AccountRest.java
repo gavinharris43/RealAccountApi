@@ -5,6 +5,7 @@ import com.qa.account.accountapi.persistence.domain.SentPrize;
 import com.qa.account.accountapi.service.AccountService;
 
 import com.qa.account.accountapi.persistence.domain.Account;
+import com.qa.account.accountapi.persistence.domain.Cohort;
 import com.qa.account.accountapi.persistence.domain.Prize;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,9 +65,24 @@ public class AccountRest {
     
     @PostMapping("${path.createAccount}")
     public Account createAccount(@RequestBody Account account) {
-        account = setAccountNumberAndPrize(account);
+        account = setAccountNumberAndPrize(account); 
         sendToQueue(account);
     	return service.addAccount(account);
+    }
+    
+    @PostMapping("${path.createCohort}")
+    public Cohort createCohort(@RequestBody Account account,Cohort cohort) {
+        account.setCohort(cohort);
+    	return cohort;
+    }
+    
+    @GetMapping("${path.getCohortById}")
+    public Cohort getCohort(@PathVariable Long id) {
+        return service.getAccount(id).getCohort();
+    }
+    @GetMapping("${path.getCohorts}")
+    public List<Cohort> getCohorts() {
+        return service.getAccountsCohorts();
     }
 
     private Account setAccountNumberAndPrize(Account account){

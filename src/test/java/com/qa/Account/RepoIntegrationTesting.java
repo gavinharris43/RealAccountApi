@@ -47,8 +47,8 @@ public class RepoIntegrationTesting {
 	private static final Account MOCK_BLANK_ACCOUNT = new Account();
 	private static final String MOCK_ACCOUNT_NUMBER = "B:646473";
 	private static final Prize MOCK_PRIZE = new Prize(1L, 50, "test date");
-	private static final Account MOCK_ACCOUNT = new Account(1L, "Ben", "Taylor", "A:746463");
-	private static final Account MOCK_UPDATED_ACCOUNT = new Account(1L, "Alvin", "Joseph", "B:745634"); 
+	private static final Account MOCK_ACCOUNT = new Account(1L, "Gavin", "Harris", "C:634893","gavin.harris@accademytrainee.com","password");
+	private static final Account MOCK_UPDATED_ACCOUNT = new Account(2L, "Alvin", "Joseph", "B:749452","alvin.joseph@accademytrainee.com","password"); 
 	
 	@Test
 	public void aAddAccountTest() {

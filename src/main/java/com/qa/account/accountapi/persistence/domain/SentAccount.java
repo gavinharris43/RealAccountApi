@@ -7,10 +7,29 @@ public class SentAccount {
     private String firstName;
 
     private String lastName;
+    
+    private String email;
+    
+    private String password;
 
     private String accountNumber;
 
-    public Long getAccountId() {
+      public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public Long getAccountId() {
         return accountId;
     }
 
@@ -49,8 +68,12 @@ public class SentAccount {
     public void setSentPrize(SentPrize sentPrize) {
         this.sentPrize = sentPrize;
     }
+    
 
-    private SentPrize sentPrize;
+  
+
+
+	private SentPrize sentPrize;
 
     public SentAccount(){}
 
@@ -59,6 +82,8 @@ public class SentAccount {
         this.firstName = account.getFirstName();
         this.lastName = account.getLastName();
         this.accountNumber = account.getAccountNumber();
+        this.email = account.getEmail();
+        this.password = account.getPassword();
         this.sentPrize = new SentPrize(account.getPrize());
     }
 
